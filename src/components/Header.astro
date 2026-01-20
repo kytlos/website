@@ -1,0 +1,110 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50" style="height: var(--header-height);">
+  <nav class="container mx-auto h-full flex items-center justify-between px-4 md:px-8">
+    <!-- Logo -->
+    <a href="/" aria-label="Kytlos Home" class="flex items-center">
+      <img
+        src="/kytlos-logo.svg"
+        alt="Kytlos"
+        width="120"
+        height="40"
+        class="h-10 w-auto md:h-12"
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="hidden md:flex items-center gap-6 list-none m-0 p-0">
+      <li>
+        <a href="#services" class="text-black font-semibold hover:text-gray-700 transition-colors">
+          {t.nav.services}
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="text-black font-semibold hover:text-gray-700 transition-colors">
+          {t.nav.contact}
+        </a>
+      </li>
+      <li>
+        <LanguageSwitcher />
+      </li>
+      <li>
+        <a href="#contact" class="btn btn-primary">
+          {t.nav.getStarted}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu Button (hamburger) -->
+    <button
+      id="mobile-menu-button"
+      aria-label={t.nav.toggleMenu}
+      aria-expanded="false"
+      class="md:hidden w-8 h-8 flex flex-col justify-center items-center gap-1.5"
+    >
+      <span class="block w-6 h-0.5 bg-black transition-all"></span>
+      <span class="block w-6 h-0.5 bg-black transition-all"></span>
+      <span class="block w-6 h-0.5 bg-black transition-all"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden fixed inset-0 bg-white z-40 flex-col gap-6 p-8"
+    style="top: var(--header-height);"
+  >
+    <a href="#services" class="text-xl font-semibold text-black hover:text-gray-700">
+      {t.nav.services}
+    </a>
+    <a href="#contact" class="text-xl font-semibold text-black hover:text-gray-700">
+      {t.nav.contact}
+    </a>
+    <div class="mt-2">
+      <LanguageSwitcher />
+    </div>
+    <a href="#contact" class="btn btn-primary mt-4">
+      {t.nav.getStarted}
+    </a>
+  </div>
+</header>
+
+<!-- Spacer for fixed header -->
+<div style="height: var(--header-height);"></div>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isExpanded));
+
+      if (isExpanded) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+      }
+    });
+
+    // Close menu when clicking on links
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

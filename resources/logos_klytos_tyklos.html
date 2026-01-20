@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Proposals - Tyklos & Klytos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Didact+Gothic&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Didact Gothic', sans-serif;
+            background: #fafafa;
+            min-height: 100vh;
+            padding: 60px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #1a1a1a;
+            margin-bottom: 60px;
+            letter-spacing: 0.15em;
+        }
+
+        .brand-section {
+            margin-bottom: 80px;
+        }
+
+        .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .logo-card {
+            background: white;
+            border-radius: 16px;
+            padding: 50px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        .logo-card.dark {
+            background: #0a0a0a;
+        }
+
+        .logo-card svg {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 30px;
+        }
+
+        .logo-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        .logo-card.dark .logo-label {
+            color: #666;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            margin: 60px 0;
+        }
+
+        .concept-note {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Proposte Logo</h1>
+
+        <!-- KLYTOS -->
+        <section class="brand-section">
+            <h2 class="brand-name">Klytos</h2>
+            <p class="concept-note">
+                Ispirato alla lettera greca Κ (Kappa) e al concetto di "illustre" (κλυτός). 
+                Curve fluide che evocano connessione, flusso di dati e intelligenza.
+            </p>
+            <div class="logo-grid">
+                <!-- Klytos Logo 1 - Flowing K -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Elegant curved K form -->
+                        <path d="M25 15 
+                                 C25 15, 25 85, 25 85" 
+                              stroke="#0a0a0a" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M25 50 
+                                 C35 50, 45 40, 55 25
+                                 C60 18, 68 12, 78 12" 
+                              stroke="#0a0a0a" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <path d="M25 50 
+                                 C35 50, 45 60, 55 75
+                                 C60 82, 68 88, 78 88" 
+                              stroke="#0a0a0a" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <!-- Subtle dot accent -->
+                        <circle cx="78" cy="12" r="4" fill="#0a0a0a"/>
+                    </svg>
+                    <span class="logo-label">Variante A — Flusso</span>
+                </div>
+
+                <!-- Klytos Logo 2 - Abstract wave symbol -->
+                <div class="logo-card dark">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Triple wave forming abstract K -->
+                        <path d="M20 25 
+                                 C30 25, 35 35, 50 50
+                                 C65 65, 70 75, 80 75" 
+                              stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M20 50 
+                                 C30 50, 40 50, 50 50
+                                 C60 50, 70 50, 80 50" 
+                              stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M20 75 
+                                 C30 75, 35 65, 50 50
+                                 C65 35, 70 25, 80 25" 
+                              stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">Variante B — Convergenza</span>
+                </div>
+
+                <!-- Klytos Logo 3 - Circular monogram -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Circular container with curved K -->
+                        <circle cx="50" cy="50" r="42" stroke="#0a0a0a" stroke-width="1.5"/>
+                        <path d="M35 28 L35 72" stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M35 50 
+                                 Q50 50, 58 35
+                                 Q63 28, 68 28" 
+                              stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                        <path d="M35 50 
+                                 Q50 50, 58 65
+                                 Q63 72, 68 72" 
+                              stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    </svg>
+                    <span class="logo-label">Variante C — Sigillo</span>
+                </div>
+
+                <!-- Klytos Logo 4 - Minimal abstract -->
+                <div class="logo-card dark">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Ultra minimal curved form -->
+                        <path d="M30 20 
+                                 C30 20, 30 80, 30 80" 
+                              stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M30 50 
+                                 C45 50, 55 30, 70 20" 
+                              stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M30 50 
+                                 C45 50, 55 70, 70 80" 
+                              stroke="white" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">Variante D — Essenziale</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- TYKLOS -->
+        <section class="brand-section">
+            <h2 class="brand-name">Tyklos</h2>
+            <p class="concept-note">
+                Anagramma di Klytos con richiamo a "τύχη" (fortuna) e "κύκλος" (ciclo). 
+                Simboleggia il ciclo dell'innovazione e la trasformazione continua.
+            </p>
+            <div class="logo-grid">
+                <!-- Tyklos Logo 1 - Spiral T -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- T with spiral element -->
+                        <path d="M25 22 L75 22" stroke="#0a0a0a" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M50 22 
+                                 L50 55
+                                 C50 70, 60 78, 70 78
+                                 C80 78, 85 70, 85 60
+                                 C85 50, 75 45, 65 50
+                                 C58 54, 55 60, 55 68" 
+                              stroke="#0a0a0a" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    </svg>
+                    <span class="logo-label">Variante A — Spirale</span>
+                </div>
+
+                <!-- Tyklos Logo 2 - Cycle symbol -->
+                <div class="logo-card dark">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Continuous cycle with T integration -->
+                        <path d="M50 15 
+                                 C75 15, 88 35, 88 50
+                                 C88 65, 75 85, 50 85
+                                 C25 85, 12 65, 12 50
+                                 C12 35, 25 20, 40 17" 
+                              stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                        <!-- Arrow head suggesting cycle -->
+                        <path d="M38 10 L45 17 L38 24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <!-- Central T -->
+                        <path d="M38 40 L62 40" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M50 40 L50 65" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">Variante B — Ciclo</span>
+                </div>
+
+                <!-- Tyklos Logo 3 - Flowing curves -->
+                <div class="logo-card">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Organic T form with flowing curves -->
+                        <path d="M20 25 
+                                 C30 20, 70 20, 80 25" 
+                              stroke="#0a0a0a" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M50 25 
+                                 C50 25, 48 50, 50 60
+                                 C52 70, 58 80, 70 82
+                                 C78 83, 82 78, 82 72" 
+                              stroke="#0a0a0a" stroke-width="3" stroke-linecap="round" fill="none"/>
+                        <!-- Second flowing element -->
+                        <path d="M50 60 
+                                 C48 70, 42 80, 30 82
+                                 C22 83, 18 78, 18 72" 
+                              stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+                    </svg>
+                    <span class="logo-label">Variante C — Radici</span>
+                </div>
+
+                <!-- Tyklos Logo 4 - Geometric minimal -->
+                <div class="logo-card dark">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Minimal T with curved base -->
+                        <path d="M25 28 L75 28" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M50 28 L50 58" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Curved base element -->
+                        <path d="M25 75 
+                                 C35 65, 45 62, 50 62
+                                 C55 62, 65 65, 75 75" 
+                              stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    </svg>
+                    <span class="logo-label">Variante D — Fondamento</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

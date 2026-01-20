@@ -1,0 +1,42 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+
+const currentLang = getLangFromUrl(Astro.url);
+
+// Get the current page path without the language prefix
+const pathname = Astro.url.pathname;
+const pathWithoutLang = pathname.replace(/^\/(en|it)/, '') || '/';
+
+// Generate language URLs
+const enUrl = currentLang === 'en' ? pathname : pathWithoutLang;
+const itUrl = currentLang === 'it' ? pathname : `/it${pathWithoutLang}`;
+---
+
+<div class="flex items-center gap-1 bg-gray-100 rounded-md p-1">
+  <a
+    href={enUrl}
+    class:list={[
+      'px-3 py-1.5 rounded text-sm font-semibold transition-all',
+      currentLang === 'en'
+        ? 'bg-white text-black shadow-sm'
+        : 'text-gray-600 hover:text-black'
+    ]}
+    aria-label="Switch to English"
+    aria-current={currentLang === 'en' ? 'true' : undefined}
+  >
+    EN
+  </a>
+  <a
+    href={itUrl}
+    class:list={[
+      'px-3 py-1.5 rounded text-sm font-semibold transition-all',
+      currentLang === 'it'
+        ? 'bg-white text-black shadow-sm'
+        : 'text-gray-600 hover:text-black'
+    ]}
+    aria-label="Passa all'italiano"
+    aria-current={currentLang === 'it' ? 'true' : undefined}
+  >
+    IT
+  </a>
+</div>

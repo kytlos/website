@@ -1,0 +1,84 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const {
+  title = t.meta.title,
+  description = t.meta.description
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/kytlos-logo.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/kytlos-logo.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL('/og-image.jpg', Astro.site)} />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL('/og-image.jpg', Astro.site)} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kytlos",
+        "url": "https://www.kytlos.com",
+        "logo": "https://www.kytlos.com/kytlos-logo.svg",
+        "description": "AI consulting services for startups",
+        "sameAs": [
+          "https://www.linkedin.com/company/kytlos",
+          "https://twitter.com/kytlos"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "hello@kytlos.com",
+          "contactType": "Customer Service"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">{t.meta.skipToContent}</a>
+
+    <slot />
+  </body>
+</html>

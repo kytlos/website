@@ -1,0 +1,90 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="bg-gray-900 text-gray-300 py-12 md:py-16 border-t border-gray-800">
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Column 1: Brand -->
+      <div>
+        <a href="/" aria-label="Kytlos Home" class="inline-block mb-4">
+          <img
+            src="/kytlos-logo.svg"
+            alt="Kytlos"
+            width="80"
+            height="26"
+            class="h-8 w-auto opacity-90"
+            style="filter: invert(1);"
+          />
+        </a>
+        <p class="text-sm text-gray-400">
+          {t.footer.tagline}
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4 text-lg">{t.footer.quickLinks}</h3>
+        <ul class="space-y-2 list-none m-0 p-0">
+          <li>
+            <a href="#services" class="text-gray-400 hover:text-white transition-colors">
+              {t.nav.services}
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="text-gray-400 hover:text-white transition-colors">
+              {t.nav.contact}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Legal & Social -->
+      <div>
+        <h3 class="text-white font-semibold mb-4 text-lg">{t.footer.connect}</h3>
+        <ul class="space-y-2 list-none m-0 p-0">
+          <li>
+            <a
+              href="https://linkedin.com/company/kytlos"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition-colors"
+              aria-label={t.footer.linkedinLabel}
+            >
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/kytlos"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition-colors"
+              aria-label={t.footer.twitterLabel}
+            >
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:info@kytlos.com"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              hello@kytlos.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-800 pt-8 text-center md:text-left">
+      <p class="text-sm text-gray-500">
+        {t.footer.copyright}
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,78 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="services" class="bg-white py-16 md:py-24">
+  <div class="container mx-auto px-4 md:px-8">
+    <!-- Section Title -->
+    <h2 class="text-center text-black mb-12 md:mb-16">
+      {t.services.title}
+    </h2>
+
+    <!-- Services Grid - 2 columns on desktop -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <!-- Service 1: AI Strategy & Consulting -->
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center font-bold text-xl">
+            1
+          </div>
+          <div>
+            <h3 class="text-black mb-3">{t.services.strategy.title}</h3>
+            <p class="text-gray-700">
+              {t.services.strategy.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: Implementation & Integration -->
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center font-bold text-xl">
+            2
+          </div>
+          <div>
+            <h3 class="text-black mb-3">{t.services.implementation.title}</h3>
+            <p class="text-gray-700">
+              {t.services.implementation.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Optimization & Support -->
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center font-bold text-xl">
+            3
+          </div>
+          <div>
+            <h3 class="text-black mb-3">{t.services.optimization.title}</h3>
+            <p class="text-gray-700">
+              {t.services.optimization.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4: Team Training & Workshops -->
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center font-bold text-xl">
+            4
+          </div>
+          <div>
+            <h3 class="text-black mb-3">{t.services.training.title}</h3>
+            <p class="text-gray-700">
+              {t.services.training.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Elegant curved K form -->
+                        <path d="M25 15 
+                                 C25 15, 25 85, 25 85" stroke="#0a0a0a" stroke-width="3" stroke-linecap="round"></path>
+                        <path d="M25 50 
+                                 C35 50, 45 40, 55 25
+                                 C60 18, 68 12, 78 12" stroke="#0a0a0a" stroke-width="3" stroke-linecap="round" fill="none"></path>
+                        <path d="M25 50 
+                                 C35 50, 45 60, 55 75
+                                 C60 82, 68 88, 78 88" stroke="#0a0a0a" stroke-width="3" stroke-linecap="round" fill="none"></path>
+                        <!-- Subtle dot accent -->
+                        <circle cx="78" cy="12" r="4" fill="#0a0a0a"></circle>
+ </svg>
