@@ -33,3 +33,6 @@ Thumbs.db
 
 # Astro
 .astro/
+
+#convert-svg-to-png cache
+convert-svg-to-png*.html
