@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kytlor.github.io',
+  site: 'https://kytlos.github.io',
   integrations: [tailwind()],
   output: 'static',
   base: '/website/',

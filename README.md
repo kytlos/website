@@ -1,6 +1,7 @@
 # Kytlos Landing Page
 
-A modern, minimalist landing page for Kytlos - AI consulting services for startups. Built with Astro and Tailwind CSS for optimal performance and SEO.
+A modern, minimalist landing page for Kytlos - AI consulting services for Startups and Public Sector. Built with Astro and Tailwind CSS for optimal performance and SEO.
+
 
 ## Features
 
@@ -173,7 +174,7 @@ ISC
 
 ## Support
 
-For questions or support, contact hello@kytlos.com
+For questions or support, contact info@kytlos.com
 
 ---
 

@@ -4,7 +4,7 @@ export const it: Translations = {
   // Meta
   meta: {
     title: "Kytlos - Consulenza AI per Startup",
-    description: "Kytlos aiuta le startup a scalare le operazioni attraverso la consulenza AI. Guida esperta per implementare automazione intelligente e strategie data-driven.",
+    description: "Kytlos aiuta le startup e il Public Sector a scalare le operazioni attraverso la consulenza AI. Guida esperta per implementare automazione intelligente e strategie data-driven.",
     skipToContent: "Vai al contenuto principale"
   },
 
