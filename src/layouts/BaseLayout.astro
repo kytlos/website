@@ -15,6 +15,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -30,8 +31,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/kytlos-logo.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/kytlos-logo.png" />
+    <link rel="icon" type="image/png" href={`${base}kytlos-logo.png`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}kytlos-logo.png`} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -55,25 +56,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Kytlos",
-        "url": "https://www.kytlos.com",
-        "logo": "https://www.kytlos.com/kytlos-logo.png",
-        "description": "AI consulting services for startups",
-        "sameAs": [
-          "https://www.linkedin.com/company/kytlos",
-          "https://twitter.com/kytlos"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "hello@kytlos.com",
-          "contactType": "Customer Service"
-        }
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kytlos",
+      "url": Astro.site?.toString(),
+      "logo": new URL(`${base}kytlos-logo.png`, Astro.site).toString(),
+      "description": "AI consulting services for startups",
+      "sameAs": [
+        "https://www.linkedin.com/company/kytlos",
+        "https://twitter.com/kytlos"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@kytlos.com",
+        "contactType": "Customer Service"
       }
-    </script>
+    })} />
   </head>
   <body>
     <!-- Skip Link for Accessibility -->

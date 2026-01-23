@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
 ---
 
 <header class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50" style="height: var(--header-height);">
@@ -11,7 +12,7 @@ const t = useTranslations(lang);
     <!-- Logo -->
     <a href="/" aria-label="Kytlos Home" class="flex items-center">
       <img
-        src="/kytlos-logo.png"
+        src={`${base}kytlos-logo.png`}
         alt="Kytlos"
         width="120"
         height="40"

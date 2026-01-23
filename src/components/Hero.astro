@@ -3,6 +3,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="relative bg-white py-16 md:py-24 lg:py-32">
@@ -33,6 +34,6 @@ const t = useTranslations(lang);
   <!-- Optional: Subtle logo watermark background -->
   <div
     class="absolute top-10 right-5 w-64 h-64 opacity-5 pointer-events-none hidden lg:block"
-    style="background-image: url('/kytlos-logo.png'); background-size: contain; background-repeat: no-repeat;"
+    style={`background-image: url('${base}kytlos-logo.png'); background-size: contain; background-repeat: no-repeat;`}
   ></div>
 </section>
