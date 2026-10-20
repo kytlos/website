@@ -18,24 +18,11 @@ const t = useTranslations(lang);
         {t.cta.description}
       </p>
 
-      <!-- Contact Form (Netlify Forms) -->
+      <!-- Contact Form (opens the visitor's email client) -->
       <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
+        id="contact-form"
         class="max-w-md mx-auto text-left"
       >
-        <!-- Hidden field for Netlify -->
-        <input type="hidden" name="form-name" value="contact" />
-
-        <!-- Honeypot field for spam protection -->
-        <p class="hidden">
-          <label>
-            {t.cta.honeypot}
-            <input name="bot-field" />
-          </label>
-        </p>
 
         <!-- Name field -->
         <div class="form-group">
@@ -86,5 +73,18 @@ const t = useTranslations(lang);
         Contact Us
       </a> -->
     </div>
+
+    <script>
+      // Compose a mailto: from the form fields (works on any static host, incl. Cloudflare Pages)
+      document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target as HTMLFormElement);
+        const subject = encodeURIComponent(`Website contact from ${data.get('name')}`);
+        const body = encodeURIComponent(
+          `${data.get('message') ?? ''}\n\n—\n${data.get('name')}\n${data.get('email')}`
+        );
+        window.location.href = `mailto:info@kytlos.com?subject=${subject}&body=${body}`;
+      });
+    </script>
   </div>
 </section>

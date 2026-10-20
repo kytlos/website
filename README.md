@@ -10,7 +10,7 @@ A modern, minimalist landing page for Kytlos - AI consulting services for Startu
 - **Fully Responsive**: Mobile-first design with breakpoints for tablet and desktop
 - **Accessible**: WCAG AA compliant with proper ARIA labels and keyboard navigation
 - **Modern Design**: Clean black-and-white aesthetic with thoughtful typography
-- **Contact Form**: Netlify Forms integration for easy contact submissions
+- **Contact Form**: Pre-filled contact form that opens the visitor's email client (no backend required)
 
 ## Tech Stack
 
@@ -83,14 +83,14 @@ npm run preview      # Preview production build locally
 
 ## Deployment
 
-### Netlify Deployment
+### Cloudflare Pages
 
-This project is configured for automatic deployment on Netlify:
+This project deploys to [Cloudflare Pages](https://pages.cloudflare.com/) and is served at https://www.kytlos.com. Build settings (if connecting a new Pages project):
 
-1. Push your code to a Git repository (GitHub, GitLab, Bitbucket)
-2. Connect the repository to Netlify
-3. Netlify will automatically detect the build settings from `netlify.toml`
-4. The site will build and deploy on every push to main branch
+- **Build command**: `npm run build`
+- **Build output directory**: `dist`
+- **Node version**: 20+ (a `.nvmrc`-style env var of `NODE_VERSION=20` works)
+- **Custom domain**: `www.kytlos.com` (add it in the Pages project's Custom domains; Cloudflare auto-creates the DNS record in the same account's zone)
 
 ### Manual Build
 

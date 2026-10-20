@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kytlos.github.io',
-  integrations: [tailwind()],
+  site: 'https://www.kytlos.com',
+  integrations: [tailwind(), sitemap()],
   output: 'static',
-  base: '/website/',
+  base: '/',
   compressHTML: true,
   i18n: {
     defaultLocale: 'en',
